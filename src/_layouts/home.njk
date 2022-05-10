@@ -1,0 +1,22 @@
+---
+layout: base
+---
+
+
+{% block css %}
+<style>
+{%- for ref in collections.referenzen %}
+  .project--{{ ref.fileSlug }} {
+    background-color: {{ ref.data.colorBrand }};
+    color: white;
+  }
+{% endfor -%}
+</style>
+{% endblock %}
+<div class="project--wrapper">
+  <div class="project--list">
+  {%- asyncEach ref in collections.referenzen %}
+    {% include "referenz--card.njk"%}
+  {% endeach -%}
+  </div>
+</div>

@@ -1,0 +1,12 @@
+    <!-- capture the CSS content as a Nunjucks variable -->
+    {# https://www.11ty.dev/docs/quicktips/inline-css/ #}
+    {# {% set css %} #}
+      {# {% include "src/assets/css/style.css" %} #}
+      {# {% include "_site/assets/css/style.css" %} #}
+      {# {% include "_site/assets/css/project-colors.css" %} #}
+    {# {% endset %} #}
+    {# <style> #}
+      {# {{ css | cssmin | safe }} #}
+    {# </style> #}
+    <!-- feed it through our cssmin filter to minify -->
+

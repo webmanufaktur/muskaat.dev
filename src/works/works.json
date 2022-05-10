@@ -1,5 +1,0 @@
-{
-  "tags": "works",
-  "layout": "works",
-  "permalink": "referenz/{{ page.fileSlug }}/index.html"
-}

@@ -1,0 +1,10 @@
+--- 
+permalink: /src/index.css
+--- 
+
+{%- for ref in collections.referenzen %}
+  .project--{{ ref.fileSlug }} {
+    background-color: {{ ref.data.colorBrand }};
+    color: white;
+  }
+{% endfor -%}

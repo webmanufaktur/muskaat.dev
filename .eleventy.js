@@ -4,7 +4,7 @@ const htmlmin = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const Image = require("@11ty/eleventy-img");
 const CleanCSS = require("clean-css");
-
+const purgeCssPlugin = require("eleventy-plugin-purgecss");
 // markdown settings and plugins
 const markdownIt = require("markdown-it");
 const markdownItImageFigures = require("markdown-it-image-figures");
@@ -29,10 +29,11 @@ markdown.use(markdownItImageFigures, {
 // 11ty image plugin
 async function imageShortcode(src, alt, caption, sizes) {
   let metadata = await Image(src, {
-    widths: [300, 600, 1024],
+    widths: [300, 600, 800, 1024],
+    sizes: "(min-width: 30em) 50vw, 100vw",
     formats: ["webp", "jpeg"],
     urlPath: "/media/", // used in frontend
-    outputDir: "./_site/media/", // used in dev
+    outputDir: "_site/media/", // used in dev
   });
   let lowsrc = metadata.jpeg[0];
   let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
@@ -70,11 +71,13 @@ async function imageShortcode(src, alt, caption, sizes) {
 module.exports = function (eleventyConfig) {
   // Set directories to pass through to the _site folder
   eleventyConfig.addPassthroughCopy("src/assets/");
+  eleventyConfig.addPassthroughCopy("images/");
   eleventyConfig.addPassthroughCopy("img/");
   eleventyConfig.addPassthroughCopy("src/**/*.jpg");
   eleventyConfig.addPassthroughCopy("src/**/*.png");
   eleventyConfig.addPassthroughCopy("src/**/*.gif");
   eleventyConfig.addPassthroughCopy("src/**/*.webp");
+  eleventyConfig.addPassthroughCopy("src/**/*.svg");
   eleventyConfig.addPassthroughCopy("src/**/*.mp4");
   eleventyConfig.addPassthroughCopy("src/**/*.txt");
 
@@ -92,6 +95,14 @@ module.exports = function (eleventyConfig) {
     posthtmlRenderOptions: {
       closingSingleTag: "default", // opt-out of <img/>-style XHTML single tags
     },
+  });
+
+  // purge CSS
+  eleventyConfig.addPlugin(purgeCssPlugin, {
+    // Optional: Specify the location of your PurgeCSS config
+    config: "./purgecss.config.js",
+    // Optional: Set quiet: true to suppress terminal output
+    quiet: false,
   });
 
   // open a browser window on --watch

@@ -5,12 +5,7 @@ layout: base
 
 {% block css %}
 <style>
-{%- for ref in collections.referenzen %}
-  .project--{{ ref.fileSlug }} {
-    background-color: {{ ref.data.colorBrand }};
-    color: white;
-  }
-{% endfor -%}
+{% for ref in collections.referenzen %} .project--{{ ref.fileSlug }} { background-color: {{ ref.data.colorBrand }}; color: white; } {% endfor %}
 </style>
 {% endblock %}
 <div class="project--wrapper">

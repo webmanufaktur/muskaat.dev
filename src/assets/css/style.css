@@ -65,7 +65,37 @@ figcaption {
   margin: 1rem auto 0 auto;
 }
 
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+.container.small {
+  max-width: 480px;
+}
+.container.medium {
+  max-width: 768px;
+}
+.container.regular {
+  max-width: 1080px;
+}
+.container.large {
+  max-width: 1440px;
+}
+.container.xlarge {
+  max-width: 1920px;
+}
+
+.ratio {
+  width: 100%;
+  aspect-ratio: 21/8;
+  border-bottom: 5px solid red;
+}
+
 .gradient {
+  background: pink;
+}
+
+.gradient2 {
   background: linear-gradient(to right, #89207c 0%, #89207c 20%, #ce583e 80%, #ce583e 100%);
   background-position: center center;
   background-repeat: no-repeat;
@@ -85,6 +115,7 @@ figcaption {
   z-index: 1;
   padding: 3rem;
   min-height: 500px;
+  padding-top: clamp(3vh, 6rem, 5vh);
   text-align: center;
 }
 .div1 .c {
@@ -96,23 +127,23 @@ figcaption {
   font-weight: 300;
 }
 
-.l img {
+.l img,
+.logo img {
   display: block;
   height: auto;
   margin: 0 auto;
   max-width: 220px;
-  padding-bottom: 3rem;
 }
 
 .div2 {
   grid-area: 1/1/2/2;
-  align-self: end;
 }
 
-.div2 img {
-  display: block;
-  height: auto;
-  width: 100%;
+.div2 {
+  background-image: url("/images/graph.png");
+  background-position: center bottom;
+  background-size: auto 545px;
+  background-repeat: no-repeat;
 }
 
 /*
@@ -142,6 +173,9 @@ project--wrapper
 }
 .project + .project {
   margin-top: 2rem;
+}
+.project a {
+  text-decoration: none;
 }
 
 .cover {
@@ -190,8 +224,4 @@ project--wrapper
   aspect-ratio: 416/219;
   display: block;
   width: 100%;
-}
-
-.google {
-  color: red;
 }

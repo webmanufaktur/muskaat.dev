@@ -2,6 +2,9 @@
 layout: base
 ---
 
+
+<div class="container small">
+
 <div class="projekt projekt--{{ page.fileSlug }}">
   <h1>{{ project or title }}</h1>
   <p>{{ project }}</p>
@@ -42,3 +45,5 @@ layout: base
   >
 </div>
     {{content | safe}}
+    </div>
+

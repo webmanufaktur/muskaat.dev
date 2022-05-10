@@ -60,9 +60,7 @@ figcaption {
   margin: 1rem auto 0 auto;
 }
 
+@import "_variables.scss";
+@import "_container.scss";
 @import "_header--graph.scss";
 @import "_project.scss";
-
-.google {
-  color: red;
-}

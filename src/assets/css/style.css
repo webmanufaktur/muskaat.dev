@@ -16,6 +16,7 @@ html {
 
 body {
   background: #f6f4f4;
+  color: #3c3c3c;
   margin: 0;
 }
 
@@ -26,6 +27,11 @@ html {
 body {
   margin: 0 auto;
   max-width: 1920px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 26px;
 }
 
 img {
@@ -74,6 +80,20 @@ figcaption {
   margin: 1rem auto 0 auto;
 }
 
+.btn {
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  background: #cb5946;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1080px;
@@ -82,7 +102,7 @@ figcaption {
   max-width: 480px;
 }
 .container.medium {
-  max-width: 768px;
+  max-width: 740px;
 }
 .container.regular {
   max-width: 1080px;
@@ -158,11 +178,8 @@ project--wrapper
  */
 .project--wrapper {
   margin: 0 auto;
-  max-width: 1250px;
-}
-
-.project--list {
-  padding: 2rem 0;
+  max-width: calc(1250px + 2rem);
+  padding: 2rem;
 }
 
 .project {
@@ -222,4 +239,221 @@ project--wrapper
   aspect-ratio: 416/219;
   display: block;
   width: 100%;
+}
+
+/* open-sans-300 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-300.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-300.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-regular - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-regular.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-500 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-500.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-500.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-600 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-600.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-600.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-700 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-700.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-800 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-800.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-800.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-300italic - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-300italic.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-300italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-italic - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-italic.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-500italic - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-500italic.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-500italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-600italic - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-600italic.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-600italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-700italic - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-700italic.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-700italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* open-sans-800italic - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src: local(""), url("/assets/fonts/opensans/open-sans-v28-latin-800italic.woff2") format("woff2"), url("/assets/fonts/opensans/open-sans-v28-latin-800italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-200 - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-200.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-200.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-200italic - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-200italic.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-200italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-300 - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-300.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-300.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-300italic - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-300italic.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-300italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-regular - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-regular.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-italic - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-italic.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-600 - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-600.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-600.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-600italic - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-600italic.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-600italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-700 - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-700.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-700italic - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-700italic.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-700italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-900 - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-900.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-900.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* source-sans-pro-900italic - latin */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src: local(""), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-900italic.woff2") format("woff2"), url("/assets/fonts/sourcesanspro/source-sans-pro-v21-latin-900italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }

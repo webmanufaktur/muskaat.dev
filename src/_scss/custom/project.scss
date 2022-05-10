@@ -13,11 +13,12 @@ project--wrapper
 
 .project--wrapper {
   margin: 0 auto;
-  max-width: 1250px;
+  max-width: calc(1250px + 2rem);
+  padding: 2rem;
 }
-.project--list {
-  padding: 2rem 0;
-}
+// .project--list {
+// padding: 2rem;
+// }
 .project {
   background: white;
   box-shadow: 0px 3px 12px -6px #ccc;

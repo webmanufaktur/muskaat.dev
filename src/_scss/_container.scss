@@ -1,0 +1,27 @@
+$max-width-base: 1080px;
+$max-width-small: 480px;
+$max-width-medium: 768px;
+$max-width-regular: $max-width-base;
+$max-width-large: 1440px;
+$max-width-xlarge: 1920px;
+
+.container {
+  margin: 0 auto;
+  max-width: $max-width-base;
+
+  &.small {
+    max-width: $max-width-small;
+  }
+  &.medium {
+    max-width: $max-width-medium;
+  }
+  &.regular {
+    max-width: $max-width-regular;
+  }
+  &.large {
+    max-width: $max-width-large;
+  }
+  &.xlarge {
+    max-width: $max-width-xlarge;
+  }
+}

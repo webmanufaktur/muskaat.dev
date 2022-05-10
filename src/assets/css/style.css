@@ -85,17 +85,7 @@ figcaption {
   max-width: 1920px;
 }
 
-.ratio {
-  width: 100%;
-  aspect-ratio: 21/8;
-  border-bottom: 5px solid red;
-}
-
 .gradient {
-  background: pink;
-}
-
-.gradient2 {
   background: linear-gradient(to right, #89207c 0%, #89207c 20%, #ce583e 80%, #ce583e 100%);
   background-position: center center;
   background-repeat: no-repeat;
@@ -115,7 +105,6 @@ figcaption {
   z-index: 1;
   padding: 3rem;
   min-height: 500px;
-  padding-top: clamp(3vh, 6rem, 5vh);
   text-align: center;
 }
 .div1 .c {
@@ -127,23 +116,23 @@ figcaption {
   font-weight: 300;
 }
 
-.l img,
-.logo img {
+.l img {
   display: block;
   height: auto;
   margin: 0 auto;
   max-width: 220px;
+  padding-bottom: 3rem;
 }
 
 .div2 {
   grid-area: 1/1/2/2;
+  align-self: end;
 }
 
-.div2 {
-  background-image: url("/images/graph.png");
-  background-position: center bottom;
-  background-size: auto 545px;
-  background-repeat: no-repeat;
+.div2 img {
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 /*

@@ -2,12 +2,12 @@
   <a href="{{ ref.url }}">
   <div class="cover project--{{ ref.fileSlug }}">
     <div class="index">
-      <div class="logo"><img src="{{ref.url}}{{ref.data.logo}}" alt=""></div>
+      <div class="logo"><img src="{{ref.url}}{{ref.data.logo}}" loading="lazy" alt="Logo {{ ref.data.title }}"></div>
       <div class="title">{{ref.data.title}}</div>
       <div class="desc">{{ref.data.desc}}</div>
       <div class="topics"><ul>{%- for topic in ref.data.topics -%}<li>{{ topic }}</li>{%- endfor -%}</ul></div>
     </div>
-    <div class="image"><img src="{{ref.url}}{{ref.data.screenDesktop}}" alt=""></div>
+    <div class="image"><img src="{{ref.url}}{{ref.data.screenDesktop}}" loading="lazy" alt="Referenzscreenshot {{ ref.data.title }}"></div>
   </div>
   </a>
 </div>

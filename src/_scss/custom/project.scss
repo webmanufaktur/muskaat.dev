@@ -43,6 +43,17 @@ project--wrapper
   grid-template-rows: min-content min-content min-content 1fr;
   padding: 3rem 2rem 1rem 2rem;
   text-align: center;
+
+  .title {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 2;
+  }
+
+  .desc {
+    line-height: 1.2;
+    font-size: 14px;
+  }
 }
 
 .topics {
@@ -76,7 +87,8 @@ project--wrapper
   display: block;
   height: 90px;
   margin: 0 auto 1rem auto;
-  width: auto;
+  width: 90px;
+  // border: 2px solid pink;
 }
 .image img {
   aspect-ratio: 416 / 219;

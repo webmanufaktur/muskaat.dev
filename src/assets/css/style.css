@@ -86,8 +86,9 @@ figcaption {
   display: inline-block;
   background: #cb5946;
   color: #fff;
+  color: #001127;
+  font-weight: bold;
   font-size: 14px;
-  font-weight: 400;
   letter-spacing: 2px;
   padding: 0.75rem 1.25rem;
   text-decoration: none;
@@ -204,6 +205,15 @@ project--wrapper
   padding: 3rem 2rem 1rem 2rem;
   text-align: center;
 }
+.index .title {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 2;
+}
+.index .desc {
+  line-height: 1.2;
+  font-size: 14px;
+}
 
 .topics {
   align-self: end;
@@ -232,7 +242,7 @@ project--wrapper
   display: block;
   height: 90px;
   margin: 0 auto 1rem auto;
-  width: auto;
+  width: 90px;
 }
 
 .image img {

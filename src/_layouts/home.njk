@@ -1,11 +1,23 @@
 ---
+seotitle: "Muskaat | Webdesign - Online Marketing - SEO"
 layout: base
 ---
 
 
 {% block css %}
 <style>
-{% for ref in collections.referenzen %} .project--{{ ref.fileSlug }} { background-color: {{ ref.data.colorBrand }}; color: white; } {% endfor %}
+{% for ref in collections.referenzen %}
+  .project--{{ ref.fileSlug }} {
+    background-color: {{ ref.data.colorBrand }};
+            color: white;
+    {%if ref.data.colorBrandContrast%}
+      color: {{ ref.data.colorBrandContrast }}
+      {% else %}
+
+        color: white;
+      {% endif%}
+}
+{% endfor %}
 </style>
 {% endblock %}
 <div class="container medium">

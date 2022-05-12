@@ -1,2 +1,2 @@
-Sitemap: /sitemap.xml
-Feed: /feed.xml
+User-Agent: *
+Allow: /

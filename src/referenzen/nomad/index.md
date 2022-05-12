@@ -15,6 +15,7 @@ logo: logo.png
 screenMobile: screenMobile.jpg
 screenDesktop: screenDesktop.jpg
 colorBrand: "#E54800"
+colorBrandContrast: "#00172d"
 colorText: "#"
 url: "https://www.nomad-rent.ch"
 --- 

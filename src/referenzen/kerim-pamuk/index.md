@@ -12,7 +12,7 @@ tasks:
   - Farben: Die Farbschemen der Unterseiten können unabhängig gestaltet werden und verleihen jeder Seite einen individuellen und prägnanten Look, passend zum Titelbild.
   - Motion: In der Menge sehr reduziert, in der Technik einfach, in der Wirkung aber um so treffender. Ziel der Bewegungsgestaltung in diesem Projekt war die Unterstreichung des plakativen und dynamischen Charakters des Internetauftritts mit einfachsten Mitteln.
   - Dynamisches Layout: Zur Anpassung des Layouts an verschiedene Geräte und Auflösungen wird die Responsiveness durch Kombination liquider und adaptiver Methoden bewirkt. Bis zum Erreichen des nächsten Umbruchpunktes kann die Website stufenlos skaliert werden. Dann springt das Layout um und und verhällt sich wieder flüssig.
-logo: logo-fixed.jpg
+logo: kerimlogonew.jpg
 screenMobile: src/referenzen/kerim-pamuk/screenMobile.jpg
 screenDesktop: screenDesktop.jpg
 colorBrand: "#182f3e"

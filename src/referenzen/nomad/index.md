@@ -11,13 +11,16 @@ tasks:
   - Webdesign: Muskaat / Polimorf
   - ProcessWire: Selbstständige Verwaltung der Mietangebote
   - Besonderheit: Entwicklung eines individuellen Mietrechners (responsive), initialer Datenimport, mehrstufige Kategorieverwaltung, Bericht-Erstellung
-logo: logo.png
+logo: nmdfakelogo.png
 screenMobile: screenMobile.jpg
 screenDesktop: screenDesktop.jpg
-colorBrand: "#E54800"
-colorBrandContrast: "#00172d"
+colorBrand: "#ffffff"
+colorBrandContrast: "#d93d00"
 colorText: "#"
 url: "https://www.nomad-rent.ch"
 --- 
 
 
+colorBrandContrast: "#E54800"
+colorBrand: "#b10f00"
+colorBrandContrast: "#00172d"

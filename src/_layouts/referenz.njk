@@ -36,14 +36,16 @@ layout: base
   <hr />
   <img src="./{{ logo }}" alt="" />
   <hr />
-  <img src="./{{ screenMobile }}" alt="" />
-  <hr />
-  <img src="./{{ screenDesktop }}" alt="" />
-  <hr />
-  <a href="{{ url }}" target="_blank" rel="nofollow noreferer noopener"
-    >Webseite</a
-  >
+
+
+
+{% set src = "src" + page.url + screenDesktop %}
+{% set alt = "Logo " + title %}
+{% set sizes = "(min-width: 300px) 800w, 100w" %}
+{% imageSimple src, alt, sizes %}
+<a href="{{ url }}" target="_blank" rel="nofollow noreferer noopener" >Webseite</a
+
 </div>
-    {{content | safe}}
-    </div>
+{{content | safe}}
+</div>
 

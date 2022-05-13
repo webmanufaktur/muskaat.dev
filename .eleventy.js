@@ -27,6 +27,29 @@ markdown.use(markdownItImageFigures, {
 });
 
 // 11ty image plugin
+// basic setup from tutorial
+// https://www.11ty.dev/docs/plugins/image/
+async function imageShortcodeSimple(src, alt, sizes) {
+  let metadata = await Image(src, {
+    widths: [300, 600, 800, 1024],
+    sizes: "(min-width: 30em) 50vw, 100vw",
+    formats: ["webp", "jpeg"],
+    urlPath: "/media/", // used in frontend
+    outputDir: "_site/media/", // used in dev
+  });
+
+  let imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
+  return Image.generateHTML(metadata, imageAttributes);
+}
+// content pages incl. figcaption
+// custom html
 async function imageShortcode(src, alt, caption, sizes) {
   let metadata = await Image(src, {
     widths: [300, 600, 800, 1024],
@@ -105,6 +128,7 @@ module.exports = function (eleventyConfig) {
   // SHORTCODES
   // 11ty image plugin shortcode
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode("imageSimple", imageShortcodeSimple);
 
   // shortcode for inserting the current year
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);

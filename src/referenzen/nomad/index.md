@@ -14,8 +14,8 @@ tasks:
 logo: nmdfakelogo.png
 screenMobile: screenMobile.jpg
 screenDesktop: screenDesktop.jpg
-colorBrand: "#ffffff"
-colorBrandContrast: "#d93d00"
+colorBrand: "#d93d00"
+colorBrandContrast: "#ffffff"
 colorText: "#"
 url: "https://www.nomad-rent.ch"
 --- 

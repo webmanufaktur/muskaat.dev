@@ -1,80 +1,15 @@
-html {
-  box-sizing: border-box;
+.google {
+  font-weight: bold;
 }
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+.bing {
+  color: pink;
 }
-html {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  line-height: 1.6;
-}
-body {
-  // background-color: olive;
-  background: #f6f4f4;
-  color: #3c3c3c;
-  margin: 0;
-}
-html {
-  background: #efefef;
-}
-body {
-  margin: 0 auto;
-  max-width: 1920px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 26px;
-}
-
-img {
-  display: block;
-  height: auto;
-  max-width: 100%;
-}
-figure {
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-article {
-  margin: 0 auto;
-  max-width: 1080px;
-}
-article > *:not(figure) {
-  // border: 2px solid pink;
-  // background: pink;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 640px;
-}
-article > figure {
-  margin: 2rem auto;
-  display: table;
-  padding: 0 2rem;
-  max-width: 1024px;
-}
-
-article > h1 {
-  text-align: center;
-}
-
-figcaption {
-  max-width: 70ex;
-  margin: 1rem auto 0 auto;
-}
-
+// COMPONENTS
+@import "components/_base.scss";
 @import "components/_index.scss";
-@import "custom/_index.scss";
+
+// THEME
+@import "theme/_index.scss";
+
+// FONTS
 @import "fonts/_index.scss";

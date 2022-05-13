@@ -1,4 +1,12 @@
 @charset "UTF-8";
+.google {
+  font-weight: bold;
+}
+
+.bing {
+  color: pink;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -86,7 +94,6 @@ figcaption {
   display: inline-block;
   background: #cb5946;
   color: #fff;
-  color: #001127;
   font-weight: bold;
   font-size: 14px;
   letter-spacing: 2px;

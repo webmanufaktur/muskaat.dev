@@ -126,6 +126,24 @@ figcaption {
   max-width: 1920px;
 }
 
+.gradient-easy {
+  background-color: #4158d0;
+  background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+}
+
+.screen {
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 4rem -2rem;
+  padding: 2rem;
+}
+.screen img {
+  box-shadow: 2px 2px 12px -5px #333;
+  border-radius: 5px;
+  display: table;
+  margin: 0 auto;
+}
+
 :root {
   --clr-tuerkis: rgb(24, 126, 143);
 }

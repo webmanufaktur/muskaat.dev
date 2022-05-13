@@ -7,13 +7,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="container medium">
-  <div class="callout">
-  {{ content  | safe }}
-  <a href="#" class="btn">Hier ist der Link</a>
-  </div>
-</div>
-
 <div class="project--wrapper">
   <div class="project--list">
   {%- asyncEach ref in collections.referenzen %}
@@ -22,5 +15,11 @@
   </div>
 </div>
 
+<div class="container medium">
+  <div class="callout">
+    {{ content  | safe }}
+    <a href="#" class="btn">Hier ist der Link</a>
+  </div>
+</div>
 {% endblock %}
 

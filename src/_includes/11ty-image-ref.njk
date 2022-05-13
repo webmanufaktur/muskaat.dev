@@ -3,3 +3,10 @@
 {% set sizes = "(min-width: 30em) 50vw, 100vw" %}
 {% image asd, alt, alt, sizes %}
 
+
+
+{% set src = "src" + page.url + screenDesktop %}
+{% set alt = "Logo " + title %}
+{% set sizes = "(min-width: 300px) 800w, 1200w" %}
+{% imageSimple src, alt, sizes %}
+

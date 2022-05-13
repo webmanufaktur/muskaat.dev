@@ -1,3 +1,4 @@
+// CONTROLL CLASSES
 .google {
   font-weight: bold;
 }
@@ -5,6 +6,7 @@
   color: pink;
 }
 // COMPONENTS
+@import "components/_variables.scss";
 @import "components/_base.scss";
 @import "components/_index.scss";
 

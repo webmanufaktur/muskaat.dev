@@ -1,0 +1,44 @@
+footer {
+  background: var(--clr-tuerkis);
+  margin-top: 6rem;
+  padding: 5rem 1rem 3rem 1rem;
+
+  a {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .logo {
+    margin: 0 auto;
+    max-width: 160px;
+    padding-bottom: 0.5rem;
+  }
+  .legal {
+    display: table;
+    margin: 0 auto;
+    ul {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin: 0;
+        padding: 0;
+
+        + li {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+  .github {
+    padding-top: 0.75rem;
+    text-align: center;
+
+    a {
+      font-size: 11px;
+    }
+  }
+}

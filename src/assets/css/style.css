@@ -7,6 +7,10 @@
   color: pink;
 }
 
+:root {
+  --clr-tuerkis: rgb(24, 126, 143);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -120,6 +124,10 @@ figcaption {
 }
 .container.xlarge {
   max-width: 1920px;
+}
+
+:root {
+  --clr-tuerkis: rgb(24, 126, 143);
 }
 
 .gradient {
@@ -257,6 +265,48 @@ project--wrapper
   aspect-ratio: 416/219;
   display: block;
   width: 100%;
+}
+
+footer {
+  background: var(--clr-tuerkis);
+  margin-top: 6rem;
+  padding: 5rem 1rem 3rem 1rem;
+}
+footer a {
+  color: white;
+  font-size: 13px;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+footer .logo {
+  margin: 0 auto;
+  max-width: 160px;
+  padding-bottom: 0.5rem;
+}
+footer .legal {
+  display: table;
+  margin: 0 auto;
+}
+footer .legal ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+footer .legal ul li {
+  margin: 0;
+  padding: 0;
+}
+footer .legal ul li + li {
+  margin-left: 1rem;
+}
+footer .github {
+  padding-top: 0.75rem;
+  text-align: center;
+}
+footer .github a {
+  font-size: 11px;
 }
 
 /* open-sans-300 - latin */

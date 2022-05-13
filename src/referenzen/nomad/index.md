@@ -11,7 +11,7 @@ tasks:
   - Webdesign: Muskaat / Polimorf
   - ProcessWire: Selbstständige Verwaltung der Mietangebote
   - Besonderheit: Entwicklung eines individuellen Mietrechners (responsive), initialer Datenimport, mehrstufige Kategorieverwaltung, Bericht-Erstellung
-logo: nmdfakelogo.png
+logo: logo.png
 screenMobile: screenMobile.jpg
 screenDesktop: screenDesktop.jpg
 colorBrand: "#d93d00"

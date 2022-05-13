@@ -7,7 +7,14 @@
     <meta name="robots" content="index, nofollow" />
     <meta name="description" content="Muskaat DEV and testing ground for new websites and technologies. Not for public usage." />
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    {# <link rel="stylesheet" href="/assets/css/style.dist.css"> #}
+{% set css %}
+{% include "_site/assets/css/style.dist.css" %}
+{% endset %}
+<style>
+{{ css | cssmin | safe }}
+</style>
+
     {% block css %}
       {# optional #}
     {% endblock %}

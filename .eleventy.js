@@ -4,7 +4,7 @@ const htmlmin = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const Image = require("@11ty/eleventy-img");
 const CleanCSS = require("clean-css");
-const purgeCssPlugin = require("eleventy-plugin-purgecss");
+// const purgeCssPlugin = require("eleventy-plugin-purgecss");
 // markdown settings and plugins
 const markdownIt = require("markdown-it");
 const markdownItImageFigures = require("markdown-it-image-figures");
@@ -95,14 +95,6 @@ module.exports = function (eleventyConfig) {
     posthtmlRenderOptions: {
       closingSingleTag: "default", // opt-out of <img/>-style XHTML single tags
     },
-  });
-
-  // purge CSS
-  eleventyConfig.addPlugin(purgeCssPlugin, {
-    // Optional: Specify the location of your PurgeCSS config
-    config: "./purgecss.config.js",
-    // Optional: Set quiet: true to suppress terminal output
-    quiet: false,
   });
 
   // open a browser window on --watch

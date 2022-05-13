@@ -2,50 +2,56 @@
 layout: base
 ---
 
-
 <div class="container medium">
-
-<div class="projekt projekt--{{ page.fileSlug }}">
-  <h1>{{ project or title }}</h1>
-  <p>{{ project }}</p>
-  <div class="desc">
-    <p>{{ desc }}</p>
+  <div class="projekt projekt--{{ page.fileSlug }}">
+    <h1 class="txt-center fnt-light">{{ project or title }}</h1>
+    <div class="intro"><p>{{intro}}</p></div>
+    <div class="screen">
+      {% set src = "src" + page.url + screenDesktop %}
+      {% set alt = "Logo " + title %}
+      {% set sizes = "(min-width: 300px) 800w, 1200w" %}
+      {% imageSimple src, alt, sizes %}
+    </div>
+    <div class="content">
+      {{content | safe }}
+    </div>
   </div>
-  <ul>
-    {% for topic in topics %}
-    <li>
-      {{ topic }}
-    </li>
-    {% endfor %}
-  </ul>
-  <ul>
-    {% for item in tasks %}
-    <li>
-      {% for label, desc in tasks[loop.index0] %}
-      <div>
-        <strong>{{ label }}</strong> {{ desc }}
-      </div>
-    </li>
-    {% endfor %} {% endfor %}
-  </ul>
-  <hr />
-  {{ colorBrand }}
-
-  <hr />
-  {{ colorText }}
-  <hr />
-  <img src="./{{ logo }}" alt="" />
-  <hr />
-
-
-
-{% set src = "src" + page.url + screenDesktop %}
-{% set alt = "Logo " + title %}
-{% set sizes = "(min-width: 300px) 800w, 100w" %}
-{% imageSimple src, alt, sizes %}
-<a href="{{ url }}" target="_blank" rel="nofollow noreferer noopener" >Webseite</a
-
 </div>
-{{content | safe}}
-</div>
+
+  {# <div class="desc"> #}
+  {# </div> #}
+  {# <ul> #}
+    {# {% for topic in topics %} #}
+    {# <li> #}
+      {# {{ topic }} #}
+    {# </li> #}
+    {# {% endfor %} #}
+  {# </ul> #}
+  {# <ul> #}
+    {# {% for item in tasks %} #}
+    {# <li> #}
+      {# {% for label, desc in tasks[loop.index0] %} #}
+      {# <div> #}
+        {# <strong>{{ label }}</strong> {{ desc }} #}
+      {# </div> #}
+    {# </li> #}
+    {# {% endfor %} {% endfor %} #}
+  {# </ul> #}
+  {# <hr /> #}
+  {# {{ colorBrand }} #}
+
+  {# <hr /> #}
+  {# {{ colorText }} #}
+  {# <hr /> #}
+  {# <img src="./{{ logo }}" alt="" /> #}
+  {# <hr /> #}
+
+
+
+  {# {% set src = "src" + page.url + screenDesktop %} #}
+  {# {% set alt = "Logo " + title %} #}
+  {# {% set sizes = "(min-width: 300px) 800w, 1200w" %} #}
+  {# {% imageSimple src, alt, sizes %} #}
+  {# <a href="{{ url }}" target="_blank" rel="nofollow noreferer noopener">Webseite</a> #}
+
 

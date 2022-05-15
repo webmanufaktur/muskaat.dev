@@ -2,21 +2,19 @@
 layout: base
 ---
 
-<div class="container medium">
-  <div class="projekt projekt--{{ page.fileSlug }}">
-    <h1 class="txt-center fnt-light">{{ project or title }}</h1>
+<article>
+    <h1 class="">{{ project or title }}</h1>
     <div class="intro"><p>{{intro}}</p></div>
-    <div class="screen gradient-easy">
+
       {% set src = "src" + page.url + screenDesktop %}
       {% set alt = "Logo " + title %}
       {% set sizes = "(min-width: 300px) 800w, 1200w" %}
       {% imageSimple src, alt, sizes %}
-    </div>
+
     <div class="content">
       {{content | safe }}
     </div>
-  </div>
-</div>
+</article>
 
   {# <div class="desc"> #}
   {# </div> #}

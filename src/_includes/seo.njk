@@ -1,0 +1,23 @@
+<title>{{ seotitle or title }}</title>
+{%- if seorobots -%}
+<meta name="robots" content="{{ seorobots }}" />
+{%- else -%}
+<meta name="robots" content="noindex, nofollow" />
+{%- endif -%}
+
+
+<meta name="description" content="{{ seodesc }}" />
+
+<meta property="og:site_name" content="{{ seotitle or title }}">
+<meta property="og:locale" content="{{ site.locale }}">
+
+<meta property="og:title" content="{{ seotitle or title }}">
+<meta property="og:description" content="{{ seodesc }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+
+{%- if image -%}
+<meta property="og:image" content="{%- if image -%}{{ site.url }}{{ page.url }}{{ image }}{%- endif -%}">
+{%- endif -%}
+
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta name="generator" content="Eleventy v1.0.1">

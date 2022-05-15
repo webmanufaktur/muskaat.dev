@@ -1,5 +1,5 @@
 --- 
-title: Home 
+title: Muskaat DEV Branch and Playground
 layout: home
 permalink: /
 ---

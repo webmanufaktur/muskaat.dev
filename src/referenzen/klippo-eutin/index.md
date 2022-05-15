@@ -13,7 +13,11 @@ tasks:
 logo: logo.jpg
 screenMobile: screenMobile.jpg
 screenDesktop: screenDesktop.jpg
-colorBrand: "#004a85"
+colorBrand: "#920A4A"
 colorText: "#"
 url: "http://www.klippo-nms.de"
 --- 
+
+eleventyExcludeFromCollections: true
+permalink: false
+

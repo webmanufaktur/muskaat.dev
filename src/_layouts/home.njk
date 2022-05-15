@@ -9,9 +9,9 @@
 {% block content %}
 <div class="project--wrapper">
   <div class="project--list">
-  {%- asyncEach ref in collections.referenzen %}
+  {%- asyncEach ref in collections.referenzen -%}
     {% include "referenz--card.njk"%}
-  {% endeach -%}
+  {%- endeach -%}
   </div>
 </div>
 

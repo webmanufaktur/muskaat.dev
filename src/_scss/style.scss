@@ -36,7 +36,7 @@ article > *:not(picture) {
 article picture {
   border-radius: 5px;
   display: table;
-  margin: 3rem auto;
+  margin: 2rem auto;
   padding: 2rem;
 
   img {
@@ -64,7 +64,7 @@ figcaption {
 }
 
 article picture {
-  @extend .gradient-easy;
+  @extend .gradient;
 }
 
 // ********

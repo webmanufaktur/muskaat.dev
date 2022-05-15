@@ -178,9 +178,28 @@ project--wrapper
   text-decoration: none;
 }
 
-.cover {
+.project:nth-child(odd) .cover {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "image image index";
+}
+.project:nth-child(odd) .cover .index {
+  grid-area: index;
+}
+.project:nth-child(odd) .cover .image {
+  grid-area: image;
+}
+
+.project:nth-child(even) .cover {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "index image image";
+}
+.project:nth-child(even) .cover .index {
+  grid-area: index;
+}
+.project:nth-child(even) .cover .image {
+  grid-area: image;
 }
 
 .index {

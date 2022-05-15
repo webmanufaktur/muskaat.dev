@@ -33,10 +33,48 @@ project--wrapper
   }
 }
 
-.cover {
+.project:nth-child(odd) .cover {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "image image index";
+
+  .index {
+    grid-area: index;
+  }
+  .image {
+    grid-area: image;
+  }
 }
+
+.project:nth-child(even) .cover {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "index image image";
+
+  .index {
+    grid-area: index;
+  }
+  .image {
+    grid-area: image;
+  }
+}
+
+// .project:nth-child(odd) .cover {
+// border: 10px solid orange;
+// display: grid;
+// grid-template-columns: 2fr 1fr;
+// grid-template-areas: index cover;
+
+// .index {
+// grid-area: index;
+// background: pink !important;
+// }
+
+// .cover {
+// grid-area: cover;
+// border: 2px solid green;
+// }
+// }
 
 .index {
   display: grid;

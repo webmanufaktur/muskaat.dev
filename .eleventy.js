@@ -129,7 +129,7 @@ module.exports = function (eleventyConfig) {
 
   // open a browser window on --watch
   eleventyConfig.setBrowserSyncConfig({
-    open: true,
+    // open: true,
   });
 
   // SHORTCODES

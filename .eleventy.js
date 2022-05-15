@@ -1,4 +1,5 @@
 // requre Luxon for date conversion
+const path = require("path");
 const { DateTime } = require("luxon");
 const htmlmin = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -34,6 +35,12 @@ async function imageShortcodeSimple(src, alt, sizes) {
     widths: [300, 600, 800, 1024],
     sizes: "(min-width: 30em) 50vw, 100vw",
     formats: ["webp", "jpeg"],
+    filenameFormat: function (id, src, width, format, options) {
+      const extension = path.extname(src);
+      const name = path.basename(src, extension);
+
+      return `${name}-${id}-${width}w.${format}`;
+    },
     urlPath: "/media/", // used in frontend
     outputDir: "_site/media/", // used in dev
   });

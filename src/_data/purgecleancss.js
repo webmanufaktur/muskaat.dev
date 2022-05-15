@@ -1,4 +1,5 @@
 // https://dev.to/brewhousedigital/minifying-js-in-eleventy-on-production-1848
+// https://dev.to/brewhousedigital/using-purgecss-with-bootstrap-and-eleventy-j7p
 const fs = require("fs");
 const MinifyCSS = require("clean-css");
 const postCSS = require("postcss");
@@ -22,7 +23,6 @@ module.exports = async function () {
     "src/**/*.njk",
     "src/**/*.html",
     "src/**/*.md",
-    "src/**/*.liquid",
     "src/**/*.js",
   ];
 
@@ -34,6 +34,7 @@ module.exports = async function () {
         content: sourceContent,
         variables: true,
         keyframes: true,
+        safelist: ["random", "yep", "button", "picture"],
       }),
     ])
       .process(css, {

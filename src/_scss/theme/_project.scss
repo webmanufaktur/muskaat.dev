@@ -93,6 +93,7 @@ project--wrapper
 }
 .image img {
   aspect-ratio: 416 / 219;
+  object-fit: cover;
   // border: 2px solid orange;
   display: block;
   width: 100%;

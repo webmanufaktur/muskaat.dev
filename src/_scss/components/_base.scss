@@ -47,30 +47,3 @@ h5,
 h6 {
   font-family: "Source Sans Pro", sans-serif;
 }
-
-article {
-  margin: 0 auto;
-  max-width: 1080px;
-}
-article > *:not(figure) {
-  // border: 2px solid pink;
-  // background: pink;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 640px;
-}
-article > figure {
-  margin: 2rem auto;
-  display: table;
-  padding: 0 2rem;
-  max-width: 1024px;
-}
-
-article > h1 {
-  text-align: center;
-}
-
-figcaption {
-  max-width: 70ex;
-  margin: 1rem auto 0 auto;
-}

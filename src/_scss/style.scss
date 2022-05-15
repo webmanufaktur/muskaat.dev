@@ -6,8 +6,6 @@
   color: pink;
 }
 // COMPONENTS
-@import "components/_variables.scss";
-@import "components/_base.scss";
 @import "components/_index.scss";
 
 // THEME
@@ -17,3 +15,75 @@
 @import "fonts/_index.scss";
 @import "utils/_fnt.scss";
 @import "utils/_txt.scss";
+
+//
+
+article {
+  // background: pink;
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 1rem;
+}
+// article > *:not(figure),
+article > *:not(picture) {
+  // border: 2px solid pink;
+  // background: pink;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 640px;
+}
+
+article picture {
+  border-radius: 5px;
+  display: table;
+  margin: 3rem auto;
+  padding: 2rem;
+
+  img {
+    border-radius: 5px;
+    box-shadow: 0px 0px 12px -3px rgba(0, 0, 0, 0.7);
+  }
+}
+article > h1 {
+  text-align: center;
+}
+
+figcaption {
+  max-width: 70ex;
+  margin: 1rem auto 0 auto;
+}
+
+.gradient-easy {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+
+article picture {
+  @extend .gradient-easy;
+}
+
+// ********
+// BTN
+// ********
+
+.btn {
+  background-color: #efefef;
+  border-radius: 5px;
+  color: #333;
+  display: inline-block;
+  padding: 1rem 2rem;
+
+  &.primary {
+    background-color: #333;
+    color: #efefef;
+  }
+  &.secodary {
+    background-color: #09f;
+    color: #fff;
+  }
+}

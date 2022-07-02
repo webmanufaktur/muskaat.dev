@@ -8,8 +8,9 @@ layout: base
 
       {% set src = "src" + page.url + screenDesktop %}
       {% set alt = "Logo " + title %}
-      {% set sizes = "(min-width: 300px) 800w, 1200w" %}
+      {# {% set sizes = "joshi" %} #}
       {% imageSimple src, alt, sizes %}
+      {# {% set sizes = "(min-width: 300px) 800w, 1200w" %} #}
 
     <div class="content">
       {{content | safe }}
@@ -25,16 +26,18 @@ layout: base
     {# </li> #}
     {# {% endfor %} #}
   {# </ul> #}
-  {# <ul> #}
-    {# {% for item in tasks %} #}
-    {# <li> #}
-      {# {% for label, desc in tasks[loop.index0] %} #}
-      {# <div> #}
-        {# <strong>{{ label }}</strong> {{ desc }} #}
-      {# </div> #}
-    {# </li> #}
-    {# {% endfor %} {% endfor %} #}
-  {# </ul> #}
+
+  <ul>
+    {% for item in tasks %}
+    <li>
+      {% for label, desc in tasks[loop.index0] %}
+      <div>
+        <strong>{{ label }}</strong> {{ desc }}
+      </div>
+    </li>
+    {% endfor %} {% endfor %}
+  </ul>
+
   {# <hr /> #}
   {# {{ colorBrand }} #}
 

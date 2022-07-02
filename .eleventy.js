@@ -30,10 +30,10 @@ markdown.use(markdownItImageFigures, {
 // 11ty image plugin
 // basic setup from tutorial
 // https://www.11ty.dev/docs/plugins/image/
-async function imageShortcodeSimple(src, alt, sizes) {
+//
+async function imageShortcodeSimple(src, alt) {
   let metadata = await Image(src, {
-    widths: [300, 600, 800, 1024],
-    sizes: "(min-width: 30em) 50vw, 100vw",
+    widths: [120, 320, 480, 640, 800, null],
     formats: ["webp", "jpeg"],
     filenameFormat: function (id, src, width, format, options) {
       const extension = path.extname(src);
@@ -47,7 +47,7 @@ async function imageShortcodeSimple(src, alt, sizes) {
 
   let imageAttributes = {
     alt,
-    sizes,
+    sizes: "auto",
     loading: "lazy",
     decoding: "async",
   };
@@ -55,12 +55,13 @@ async function imageShortcodeSimple(src, alt, sizes) {
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
   return Image.generateHTML(metadata, imageAttributes);
 }
+//
+//
 // content pages incl. figcaption
 // custom html
-async function imageShortcode(src, alt, caption, sizes) {
+async function imageShortcode(src, alt, caption) {
   let metadata = await Image(src, {
-    widths: [300, 600, 800, 1024],
-    sizes: "(min-width: 30em) 50vw, 100vw",
+    widths: [120, 320, 480, 640, 800, null],
     formats: ["webp", "jpeg"],
     urlPath: "/media/", // used in frontend
     outputDir: "_site/media/", // used in dev
@@ -78,7 +79,7 @@ async function imageShortcode(src, alt, caption, sizes) {
           imageFormat[0].sourceType
         }" srcset="${imageFormat
           .map((entry) => entry.srcset)
-          .join(", ")}" sizes="${sizes}">`;
+          .join(", ")}" sizes="auto">`;
       })
       .join("\n")}
       <img
@@ -92,10 +93,6 @@ async function imageShortcode(src, alt, caption, sizes) {
         <figcaption>${caption}</figcaption>
     </picture></figure>`;
 }
-
-// You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-// return Image.generateHTML(metadata, imageAttributes);
-// }
 
 // module exports
 module.exports = function (eleventyConfig) {

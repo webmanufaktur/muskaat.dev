@@ -7,6 +7,13 @@ topics:
   - Konzept
   - Design
   - ProcessWire
+tasker:
+  - title: ProcessWire
+    desc: Komplexes Redaktionssystem zur selbstständigen Bearbeitung und Erweiterung von Angeboten
+  - title: Funktionen
+    desc: Automatisierung zur zeitgesteuerten Darstellung und Änderung von Angeboten und Hinweisen
+  - title: Social Media
+    desc: Täglich wechselnde, automatisierte Mittagstisch-Updates auf Facebook und Twitter
 tasks:
   - ProcessWire: Komplexes Redaktionssystem zur selbstständigen Bearbeitung und Erweiterung von Angeboten
   - Funktionen: Automatisierung zur zeitgesteuerten Darstellung und Änderung von Angeboten und Hinweisen

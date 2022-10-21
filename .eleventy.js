@@ -5,7 +5,7 @@ const htmlmin = require("html-minifier");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const Image = require("@11ty/eleventy-img");
 const CleanCSS = require("clean-css");
-// const purgeCssPlugin = require("eleventy-plugin-purgecss");
+const pluginPageAssets = require("eleventy-plugin-page-assets");
 // markdown settings and plugins
 const markdownIt = require("markdown-it");
 const markdownItImageFigures = require("markdown-it-image-figures");
@@ -31,30 +31,6 @@ markdown.use(markdownItImageFigures, {
 // basic setup from tutorial
 // https://www.11ty.dev/docs/plugins/image/
 //
-async function imageShortcodeSimple(src, alt) {
-  let metadata = await Image(src, {
-    widths: [120, 320, 480, 640, 800, null],
-    formats: ["webp", "jpeg"],
-    filenameFormat: function (id, src, width, format, options) {
-      const extension = path.extname(src);
-      const name = path.basename(src, extension);
-
-      return `${name}-${id}-${width}w.${format}`;
-    },
-    urlPath: "/media/", // used in frontend
-    outputDir: "_site/media/", // used in dev
-  });
-
-  let imageAttributes = {
-    alt,
-    sizes: "auto",
-    loading: "lazy",
-    decoding: "async",
-  };
-
-  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
-  return Image.generateHTML(metadata, imageAttributes);
-}
 
 async function imageShortcode(src, alt, cls, wdth = "null") {
   let metadata = await Image(src, {
@@ -84,44 +60,6 @@ async function imageShortcode(src, alt, cls, wdth = "null") {
 
   return Image.generateHTML(metadata, imageAttributes);
 }
-//
-//
-// content pages incl. figcaption
-// custom html
-async function imageShortcode(src, alt, caption) {
-  let metadata = await Image(src, {
-    widths: [120, 320, 480, 640, 800, null],
-    formats: ["webp", "jpeg"],
-    urlPath: "/media/", // used in frontend
-    outputDir: "_site/media/", // used in dev
-  });
-  let lowsrc = metadata.jpeg[0];
-  let highsrc = metadata.jpeg[metadata.jpeg.length - 1];
-  if (caption === undefined) {
-    caption = alt;
-  }
-
-  return `<figure><picture>
-    ${Object.values(metadata)
-      .map((imageFormat) => {
-        return `  <source type="${
-          imageFormat[0].sourceType
-        }" srcset="${imageFormat
-          .map((entry) => entry.srcset)
-          .join(", ")}" sizes="auto">`;
-      })
-      .join("\n")}
-      <img
-        src="${lowsrc.url}"
-        width="${highsrc.width}"
-        height="${highsrc.height}"
-        alt="${alt}"
-        loading="lazy"
-        sizes="auto",
-        decoding="async">
-        <figcaption>${caption}</figcaption>
-    </picture></figure>`;
-}
 
 // module exports
 module.exports = function (eleventyConfig) {
@@ -129,13 +67,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/");
   eleventyConfig.addPassthroughCopy("images/");
   eleventyConfig.addPassthroughCopy("img/");
-  eleventyConfig.addPassthroughCopy("src/**/*.jpg");
-  eleventyConfig.addPassthroughCopy("src/**/*.png");
-  eleventyConfig.addPassthroughCopy("src/**/*.gif");
-  eleventyConfig.addPassthroughCopy("src/**/*.webp");
-  eleventyConfig.addPassthroughCopy("src/**/*.svg");
-  eleventyConfig.addPassthroughCopy("src/**/*.mp4");
-  eleventyConfig.addPassthroughCopy("src/**/*.txt");
 
   // set markdown engine
   eleventyConfig.setLibrary("md", markdown);
@@ -143,14 +74,20 @@ module.exports = function (eleventyConfig) {
   // Watch scss folder for changes
   // not necessary in this setup
   eleventyConfig.addWatchTarget("./src/assets/");
-  eleventyConfig.addWatchTarget("./src/_scss");
-  eleventyConfig.addWatchTarget("./img/");
 
   // RSS Feeds
   eleventyConfig.addPlugin(pluginRss, {
     posthtmlRenderOptions: {
       closingSingleTag: "default", // opt-out of <img/>-style XHTML single tags
     },
+  });
+
+  // asset management
+  eleventyConfig.addPlugin(pluginPageAssets, {
+    mode: "directory",
+    postsMatching: "src/**/*.md",
+    assetsMatching: "*.jpg|*.png|*.gif|*.mp4|*.webp|*.webm|.svg",
+    silent: true,
   });
 
   // open a browser window on --watch
@@ -161,7 +98,6 @@ module.exports = function (eleventyConfig) {
   // SHORTCODES
   // 11ty image plugin shortcode
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  eleventyConfig.addNunjucksAsyncShortcode("imageSimple", imageShortcodeSimple);
 
   // shortcode for inserting the current year
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);

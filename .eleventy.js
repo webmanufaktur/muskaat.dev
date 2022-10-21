@@ -55,6 +55,35 @@ async function imageShortcodeSimple(src, alt) {
   // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
   return Image.generateHTML(metadata, imageAttributes);
 }
+
+async function imageShortcode(src, alt, cls, wdth = "null") {
+  let metadata = await Image(src, {
+    widths: wdth,
+    formats: ["webp", "jpeg"],
+    urlPath: "/assets/media/", // used in frontend
+    outputDir: "_site/assets/media/", // used in dev
+    filenameFormat: function (id, src, width, format) {
+      const extension = path.extname(src);
+      const name = path.basename(src, extension);
+
+      return `${name}-${id}-${width}w.${format}`;
+    },
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    },
+  });
+  let imageAttributes = {
+    alt,
+    class: cls,
+    sizes: "auto",
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  return Image.generateHTML(metadata, imageAttributes);
+}
 //
 //
 // content pages incl. figcaption

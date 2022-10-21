@@ -1,0 +1,34 @@
+{
+  "name": "11ty-starter",
+  "version": "1.0.0",
+  "description": "Clean and simple 11ty starter with regular updates and some common dev patterns.",
+  "main": "README.md",
+  "scripts": {
+    "watch:sass": "sass --no-source-map --watch src/_scss:src/assets/css",
+    "build:sass": "sass --no-source-map src/_scss:src/assets/css",
+    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "build:eleventy": "npx @11ty/eleventy",
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-webmanufaktur:webmanufaktur/11ty-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-img": "^1.1.0",
+    "@11ty/eleventy-plugin-rss": "^1.1.2",
+    "clean-css": "^5.3.0",
+    "html-minifier": "^4.0.0",
+    "markdown-it": "^12.3.2",
+    "markdown-it-image-figures": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.51.0",
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "postcss": "^8.2.14"
+  }
+}

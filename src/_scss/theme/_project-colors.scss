@@ -1,7 +1,0 @@
-{%- for ref in collections.referenzen -%}
-  .project--{{ ref.fileSlug }} {
-    background-color: {{ ref.data.colorBrand }};
-    color: #ffffff;
-  }
-{%- endfor -%}
-

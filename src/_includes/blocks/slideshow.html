@@ -1,0 +1,8 @@
+<div>
+  <h2>{{ block.type }}</h2>
+  <ul>
+    {% for slide in block.slides %}
+    <li>{{ slide.image }} // {{ slide.alt }}</li>
+    {% endfor %}
+  </ul>
+</div>

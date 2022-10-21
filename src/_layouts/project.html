@@ -1,0 +1,46 @@
+---
+layout: "base.html"
+---
+
+{{ title }}<br />
+{{ layout }}<br />
+{{ project }}<br />
+{{ desc }}<br />
+{{ url }}<br />
+<hr />
+<ul>
+  {%for topic in topics %}
+  <li>{{ topic.label }}</li>
+  {% endfor %}
+</ul>
+<hr />
+<ul>
+  {%for task in tasks %}
+  <li>{{ task.label }}: {{ task.desc }}</li>
+  {% endfor %}
+</ul>
+
+<hr />
+<ul>
+  <li>{{ images.logo }}</li>
+  <li>{{ images.mobile }}</li>
+  <li>{{ images.desktop }}</li>
+</ul>
+
+<hr />
+<ul>
+  <li>{{ colors.brand }}</li>
+  <li>{{ colors.text }}</li>
+</ul>
+<hr />
+<ul>
+  {% for block in blocks %}
+  <li>
+    {{ block.type }}
+    <hr />
+    {% include "blocks/" + block.type + ".html" %}
+    <hr />
+    <hr />
+  </li>
+  {% endfor %}
+</ul>

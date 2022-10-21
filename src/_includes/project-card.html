@@ -1,0 +1,68 @@
+<div
+  class="project max-w-7xl mx-auto {{ ref.data.colors.background }} text-white md:shadow-xl group"
+>
+  <div class="sm:grid sm:grid-cols-2 md:grid-cols-3">
+    <!-- SCREEN SMALL -->
+    <div class="screen--small md:hidden">
+      {% set src = "src" + ref.url + ref.data.screenDesktop %} {% set alt =
+      "Screenshot " + ref.data.title %} {% set sizes = "bernie" %}
+
+      <img
+        src="{{ref.url}}{{ref.data.images.mobile}}"
+        loading="lazy"
+        alt="Logo {{ ref.data.title }}"
+        class="h-auto block w-full sm:group-odd:border-l-[12px] md:group-odd:border-l-0 sm:border-white border-b-4 sm:border-b-0 border-white"
+      />
+    </div>
+
+    <!-- INFO -->
+    <div
+      class="info sm:flex sm:flex-col md:pb-10 md:pt-12 px-4 sm:group-even:border-l-[12px] md:group-even:border-l-0 sm:group-odd:col-start-1 sm:group-odd:col-end-2 md:group-odd:col-start-3 md:group-odd:col-end-4 sm:group-odd:row-start-1"
+    >
+      <div class="my-auto md:my-0">
+        <div class="logo hidden sm:block">
+          <img
+            src="{{ref.url}}{{ref.data.images.logo}}"
+            loading="lazy"
+            alt="Logo {{ ref.data.title }}"
+            class="w-[80px] md:w-[90px] lg:w-[120px] h-auto block rounded-full mx-auto"
+          />
+        </div>
+        <div
+          class="text-center self-center py-2 text-sm sm:text-xl md:text-2xl md:mt-4 sm:font-light"
+        >
+          {{ref.data.title}}
+        </div>
+      </div>
+      <div class="text-center text-sm lg:text-base lg:mt-4 hidden md:block">
+        {{ ref.data.desc }}
+      </div>
+      <div class="topics hidden md:block mt-auto">
+        <ul
+          class="flex pt-2 justify-center [&>li:not(:first-child)]:before:content-['·'] [&>li:not(:first-child)]:before:pl-1 [&>li:not(:first-child)]:before:pr-1"
+        >
+          {%- for topic in ref.data.topics -%}
+          <li class="tracking-wider text-xs lg:text-sm">{{ topic.label }}</li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+
+    <!-- SCREEN LARGE -->
+    <!-- even:border-4 even:border-emerald-400 -->
+    <!-- md:group-odd:col-start-1 md:group-odd:col-end-3 -->
+    <div
+      class="screen--large hidden md:block md:col-span-2 md:group-odd:col-start-1 md:group-odd:col-end-3 md:group-odd:row-start-1"
+    >
+      {% set src = "src" + ref.url + ref.data.screenDesktop %} {% set alt =
+      "Screenshot " + ref.data.title %} {% set sizes = "bernie" %}
+
+      <img
+        src="{{ref.url}}{{ref.data.images.desktop}}"
+        loading="lazy"
+        alt="Logo {{ ref.data.title }}"
+        class="md:h-full md:w-auto md:object-cover lg:object-contain lg:h-auto lg:w-full block"
+      />
+    </div>
+  </div>
+</div>

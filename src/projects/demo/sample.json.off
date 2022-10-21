@@ -1,0 +1,34 @@
+---json
+{
+"title": "Kerim Pamuk"
+"project": "Kerim Pamuk"
+"desc": "Kabarettist & Autor"
+"topics": [
+"CMS",
+"Konzept"
+]
+
+"tasks": [
+{
+"type": "Webdesign",
+"desc": "Konsequent plakativ, betont clean und reduziert. Exakte fluide Anpassung an alle Bildschirmformate.
+}
+,{"type": "ProcessWire",
+"desc": "Einfache Verwaltung von Unterseiten, Pressestimmen und Terminen. Buchtitel und Programmplakate können mit wenigen Klicks hinzugefügt werden. Die bündige Ausrichtung eines neuen Titels auf der Startseite erfolgt automatisch."}
+,{"type": "Terminverwaltung",
+"desc": "Abgelaufene Termine werden selbstständig entfernt."}
+,{"type": "Farben",
+"desc": "Die Farbschemen der Unterseiten können unabhängig gestaltet werden und verleihen jeder Seite einen individuellen und prägnanten Look, passend zum Titelbild."}
+,{"type": "Motion",
+"desc": "In der Menge sehr reduziert, in der Technik einfach, in der Wirkung aber um so treffender. Ziel der Bewegungsgestaltung in diesem Projekt war die Unterstreichung des plakativen und dynamischen Charakters des Internetauftritts mit einfachsten Mitteln."}
+,{"type": "Dynamisches Layout",
+"desc": "Zur Anpassung des Layouts an verschiedene Geräte und Auflösungen wird die Responsiveness durch Kombination liquider und adaptiver Methoden bewirkt. Bis zum Erreichen des nächsten Umbruchpunktes kann die Website stufenlos skaliert werden. Dann springt das Layout um und und verhällt sich wieder flüssig."}
+]
+"logo": kerimlogonew.jpg
+"screenMobile": src/referenzen/kerim-pamuk/screenMobile.jpg
+"screenDesktop": screenDesktop.jpg
+"colorBrand": "#182f3e"
+"colorText": "#ca572f"
+"url": "https://www.kerimpamuk.de"
+}
+---

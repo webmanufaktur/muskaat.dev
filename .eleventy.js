@@ -9,6 +9,7 @@ const pluginPageAssets = require("eleventy-plugin-page-assets");
 // markdown settings and plugins
 const markdownIt = require("markdown-it");
 const markdownItImageFigures = require("markdown-it-image-figures");
+const mila = require("markdown-it-link-attributes");
 
 // Details about HowTo enable MarkdownIt Image Figures
 // https://github.com/Antonio-Laguna/markdown-it-image-figures
@@ -18,6 +19,7 @@ const markdown = markdownIt({
   html: true,
   linkify: true,
   typographer: true,
+  breaks: true,
 });
 
 markdown.use(markdownItImageFigures, {
@@ -26,6 +28,34 @@ markdown.use(markdownItImageFigures, {
   classes: "lazy",
   figcaption: true,
 });
+
+markdown.use(mila, [
+  {
+      matcher(href, config) {
+          return href.startsWith("https:");
+      },
+      attrs: {
+          target: "_blank",
+          rel: "nofollow noopener noreferrer",
+      },
+  },
+  {
+      matcher(href, config) {
+          return href.startsWith("mailto");
+      },
+      attrs: {
+          rel: "nofollow noopener noreferrer",
+      },
+  },
+  {
+      matcher(href, config) {
+          return href.startsWith("tel");
+      },
+      attrs: {
+          rel: "nofollow noopener noreferrer",
+      },
+  },
+]);
 
 // 11ty image plugin
 // basic setup from tutorial

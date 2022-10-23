@@ -1,5 +1,6 @@
 ---
 title: Muskaat DEV Branch and Playground
+seodesc: "SEO DESC"
 layout: "home.html"
 permalink: /
 ---

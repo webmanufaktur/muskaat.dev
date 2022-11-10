@@ -6,6 +6,8 @@ layout: base.html
   <div class="space-y-4 md:space-y-8 px-4">
     {%- asyncEach ref in collections.projects -%}
     <!-- INCLUDE REFERENZ -->
-    {% include "project-card.html"%} {%- endeach -%}
+    {% include "project-card.html"%}
+    <!-- END INCLUDE -->
+    {%- endeach -%}
   </div>
 </div>

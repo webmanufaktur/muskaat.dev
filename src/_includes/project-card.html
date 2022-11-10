@@ -4,10 +4,10 @@
   <div class="sm:grid sm:grid-cols-2 md:grid-cols-3">
     <!-- SCREEN SMALL -->
     <div class="screen--small md:hidden">
-      {% image "./src/" + ref.url + ref.data.images.mobile , "Screenshot " +
-      ref.data.title, "h-auto block w-full sm:group-odd:border-l-[12px]
-      md:group-odd:border-l-0 sm:border-white border-b-4 sm:border-b-0
-      border-white", [1280] %}
+      {% image "./src/projects/" + ref.fileSlug + "/" + ref.data.images.mobile ,
+      "Screenshot " + ref.data.title, "h-auto block w-full
+      sm:group-odd:border-l-[12px] md:group-odd:border-l-0 sm:border-white
+      border-b-4 sm:border-b-0 border-white", [1280] %}
     </div>
 
     <!-- INFO -->
@@ -21,12 +21,11 @@
             src="{{ref.url}}{{ref.data.images.logo}}"
             loading="lazy"
             alt="Logo {{ ref.data.title }}"
-            class="w-[80px] md:w-[90px] lg:w-[120px] h-auto block rounded-full mx-auto hidden"
+            class="w-[80px] md:w-[90px] lg:w-[120px] h-auto hidden rounded-full mx-auto"
           />
-
-          {% image "./src/" + ref.url + ref.data.images.logo , "Logo " +
-          ref.data.title, "w-[80px] md:w-[90px] lg:w-[120px] h-auto block
-          rounded-full mx-auto", [120] %}
+          {% image "./src/projects/" + ref.fileSlug + "/" + ref.data.images.logo
+          , "Logo " + ref.data.title, "w-[80px] md:w-[90px] lg:w-[120px] h-auto
+          block rounded-full mx-auto", [120] %}
         </div>
         <div
           class="subpixel-antialiased text-center self-center py-2 text-sm sm:text-xl md:text-2xl md:mt-4 sm:font-light"
@@ -34,7 +33,9 @@
           {{ref.data.title}}
         </div>
       </div>
-      <div class="subpixel-antialiased text-center text-sm lg:text-base lg:mt-4 hidden md:block">
+      <div
+        class="subpixel-antialiased text-center text-sm lg:text-base lg:mt-4 hidden md:block"
+      >
         {{ ref.data.desc }}
       </div>
       <div class="topics hidden md:block mt-auto">
@@ -54,9 +55,9 @@
     <div
       class="screen--large hidden md:block md:col-span-2 md:group-odd:col-start-1 md:group-odd:col-end-3 md:group-odd:row-start-1"
     >
-      {% image "./src/" + ref.url + ref.data.images.desktop , "Screenshot " +
-      ref.data.title, "md:h-full md:w-auto md:object-cover lg:object-contain
-      lg:h-auto lg:w-full block", [1280] %}
+      {% image "./src/projects/" + ref.fileSlug + "/" + ref.data.images.desktop
+      , "Screenshot " + ref.data.title, "md:h-full md:w-auto md:object-cover
+      lg:object-contain lg:h-auto lg:w-full block", [1280] %}
     </div>
   </div>
 </div>

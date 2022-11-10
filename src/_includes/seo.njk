@@ -1,18 +1,18 @@
-<title>{{ seotitle or title }}</title>
-{%- if seorobots -%}
-<meta name="robots" content="{{ seorobots }}" />
+<title>{{ seo.title or title }}</title>
+{%- if seo.robots -%}
+<meta name="robots" content="{{ seo.robots }}" />
 {%- else -%}
 <meta name="robots" content="noindex, follow" />
 {%- endif -%}
 
 
-<meta name="description" content="{{ seodesc }}" />
+<meta name="description" content="{{ seo.desc }}" />
 
-<meta property="og:site_name" content="{{ seotitle or title }}">
+<meta property="og:site_name" content="{{ seo.title or title }}">
 <meta property="og:locale" content="{{ site.locale }}">
 
-<meta property="og:title" content="{{ seotitle or title }}">
-<meta property="og:description" content="{{ seodesc }}">
+<meta property="og:title" content="{{ seo.title or title }}">
+<meta property="og:description" content="{{ seo.desc }}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 
 {%- if image -%}

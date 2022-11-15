@@ -1,0 +1,12 @@
+---
+permalink: /audit/drews/canonical.txt
+layout: ""
+eleventyExcludeFromCollections: true
+---
+
+{%- for item in drews.items %}
+{{ item.url }}
+
+    <link rel="canonical" href="{{ item.canonical }}" />
+
+{% endfor %}

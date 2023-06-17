@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* html {
+    font-family: "Canaro", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+  }
+
+  .profile [type="text"],
+  .profile [type="email"],
+  .profile [type="url"],
+  .profile [type="password"],
+  .profile [type="number"],
+  .profile [type="date"],
+  .profile [type="datetime-local"],
+  .profile [type="month"],
+  .profile [type="search"],
+  .profile [type="tel"],
+  .profile [type="time"],
+  .profile [type="week"],
+  .profile [multiple],
+  .profile textarea,
+  .profile select {
+    @apply mb-6 w-full rounded border-2 border-nmd-elfenbein bg-nmd-elfenbein15  py-3 text-nmd-black placeholder:text-nmd-black40 focus:border-nmd-elfenbein focus:ring-nmd-elfenbein;
+  }
+
+  .profile [type="checkbox"],
+  .profile [type="radio"] {
+    @apply border-2 border-nmd-black70 text-nmd-orange focus:ring-0;
+  }
+
+  .profile .profile-label-default {
+    @apply mb-2 ml-1 block text-sm font-semibold uppercase text-nmd-black40;
+  }
+
+  .profile .profile-label-inline {
+    @apply ml-4 text-sm font-bold uppercase text-nmd-orange;
+  } */
+}
+
+/* AlpineJS anti-flicker */
+[x-cloak] {
+  display: none !important;
+}

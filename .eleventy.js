@@ -31,29 +31,29 @@ markdown.use(markdownItImageFigures, {
 
 markdown.use(mila, [
   {
-      matcher(href, config) {
-          return href.startsWith("https:");
-      },
-      attrs: {
-          target: "_blank",
-          rel: "nofollow noopener noreferrer",
-      },
+    matcher(href, config) {
+      return href.startsWith("https:");
+    },
+    attrs: {
+      target: "_blank",
+      rel: "nofollow noopener noreferrer",
+    },
   },
   {
-      matcher(href, config) {
-          return href.startsWith("mailto");
-      },
-      attrs: {
-          rel: "nofollow noopener noreferrer",
-      },
+    matcher(href, config) {
+      return href.startsWith("mailto");
+    },
+    attrs: {
+      rel: "nofollow noopener noreferrer",
+    },
   },
   {
-      matcher(href, config) {
-          return href.startsWith("tel");
-      },
-      attrs: {
-          rel: "nofollow noopener noreferrer",
-      },
+    matcher(href, config) {
+      return href.startsWith("tel");
+    },
+    attrs: {
+      rel: "nofollow noopener noreferrer",
+    },
   },
 ]);
 
@@ -95,6 +95,7 @@ async function imageShortcode(src, alt, cls, wdth = "null") {
 module.exports = function (eleventyConfig) {
   // Set directories to pass through to the _site folder
   eleventyConfig.addPassthroughCopy("src/assets/");
+  eleventyConfig.addPassthroughCopy("src/ftg/");
   eleventyConfig.addPassthroughCopy("images/");
   eleventyConfig.addPassthroughCopy("img/");
 

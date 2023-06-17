@@ -1,89 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fake Tweet</title>
-
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
-
+    <link rel="stylesheet" href="/ftg/tailwind.dist.css" />
+    <script defer src="/ftg/alpinejs.dist.js"></script>
+    <script src="/ftg/app.dist.js"></script>
     <style>
       .fttext a {
         color: blue !important;
       }
     </style>
   </head>
-  <body
-    x-data="{ ftname: '', fthandle: '', ftavatar: '', fttext: '', ftreplies: '69', ftretweets: '420', ftlikes: '1.337', ftstats: '31.415', ftverified: true}"
-  >
-    <div class="flex">
+  <body class="" x-data>
+    <div class="flex min-h-screen">
       <div class="w-[400px] p-12 font-mono">
         <div class="space-y-4">
           <div>
             <label for="ftname"
-              ><span class="font-semibold block text-sm mb-1">Name</span
+              ><span class="mb-1 block text-sm font-semibold">Name</span
               ><input
                 class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
                 type="text"
                 name="ftname"
                 id="ftname"
-                x-model:value="ftname"
+                x-model:value="$store.settings.data.ftname"
             /></label>
           </div>
 
           <div>
             <label for="fthandle"
-              ><span class="font-semibold block text-sm mb-1">Handle</span
+              ><span class="mb-1 block text-sm font-semibold">Handle</span
               ><input
                 class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
                 type="text"
                 name="fthandle"
                 id="fthandle"
-                x-model:value="fthandle"
+                x-model:value="$store.settings.data.fthandle"
             /></label>
           </div>
 
           <div>
             <label for="ftverified"
-              ><span class="font-semibold block text-sm mb-1">Verified</span>
-              <div class="text-sm flex">
+              ><span class="mb-1 block text-sm font-semibold">Verified</span>
+              <div class="flex text-sm">
                 <input
                   type="checkbox"
                   name="ftverified"
                   id="ftverified"
-                  x-model="ftverified"
+                  x-model="$store.settings.data.ftverified"
                   class="form-checkbox rounded text-blue-400"
                 />
                 <div class="ml-1">Show verification badge</div>
               </div>
             </label>
           </div>
+
+          <!-- AVATAR ICON -->
           <div>
-            <label for="ftavatar"
-              ><span class="font-semibold block text-sm mb-1">Avatar URL</span
+            <label for="ftavatar" class="block"
+              ><span class="mb-1 block text-sm font-semibold">Avatar URL</span
               ><input
                 class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
                 type="text"
                 name="ftavatar"
                 id="ftavatar"
-                x-model="ftavatar"
+                x-model="$store.settings.data.ftavatar"
             /></label>
+            <div class="pt-2 text-sm text-gray-500">
+              Add any image url you like.
+            </div>
           </div>
+          <!-- TWEET TEXT -->
           <div>
             <label for="fttext"
-              ><span class="font-semibold block text-sm mb-1">Tweet</span>
+              ><span class="mb-1 block text-sm font-semibold">Tweet</span>
               <textarea
                 class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
                 name="fttext"
                 id="fttext"
                 rows="10"
-                x-model:value="fttext"
+                x-model:value="$store.settings.data.fttext"
               >
               </textarea>
               <span class="text-sm">
@@ -94,86 +92,101 @@
           </div>
           <div>
             <label for="ftreplies">
-              <span class="font-semibold block text-sm mb-1">Replies</span
+              <span class="mb-1 block text-sm font-semibold">Replies</span
               ><input
                 class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
                 type="text"
                 name="ftreplies"
                 id="ftreplies"
-                x-model:value="ftreplies"
+                x-model:value="$store.settings.data.ftreplies"
             /></label>
           </div>
           <div>
             <label for="ftretweets"
-              ><span class="font-semibold block text-sm mb-1">Retweets</span
+              ><span class="mb-1 block text-sm font-semibold">Retweets</span
               ><input
                 class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
                 type="text"
                 name="ftretweets"
                 id="ftretweets"
-                x-model:value="ftretweets"
+                x-model:value="$store.settings.data.ftretweets"
             /></label>
           </div>
           <div>
             <label for="ftlikes"
-              ><span class="font-semibold block text-sm mb-1">Likes</span
+              ><span class="mb-1 block text-sm font-semibold">Likes</span
               ><input
                 class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
                 type="text"
                 name="ftlikes"
                 id="ftlikes"
-                x-model:value="ftlikes"
+                x-model:value="$store.settings.data.ftlikes"
             /></label>
           </div>
           <div>
             <label for="ftstats"
-              ><span class="font-semibold block text-sm mb-1">Stats</span
+              ><span class="mb-1 block text-sm font-semibold">Stats</span
               ><input
                 class="w-full rounded border-2 border-gray-100 focus:border-2 focus:border-blue-400 focus:ring-0"
                 type="text"
                 name="ftstats"
                 id="ftstats"
-                x-model:value="ftstats"
+                x-model:value="$store.settings.data.ftstats"
             /></label>
           </div>
+        </div>
+
+        <div class="mt-12">
+          <button
+            x-on:click="localStorage.clear(), location.reload()"
+            type="button"
+            class="cursor-pointer rounded bg-blue-500 px-4 py-2 text-sm uppercase text-white"
+          >
+            Reset to default settings
+          </button>
         </div>
       </div>
 
       <!-- TWEET -->
       <div
-        class="flex-1 bg-gradient-to-b from-purple-500 to-pink-500 flex justify-center items-center"
+        class="flex flex-1 items-center justify-center bg-gradient-to-b from-purple-500 to-pink-500"
       >
         <div class="p-16">
-          <div class="bg-white rounded-xl shadow-xl max-w-lg">
+          <div class="max-w-lg rounded-xl bg-white shadow-xl">
             <!-- TWITTER HEADER -->
             <div class="flex items-center px-6 py-4">
               <div class="mr-2">
                 <img
-                  :src="ftavatar"
-                  class="w-12 h-12 block rounded-full"
+                  :src="$store.settings.data.ftavatar"
+                  class="block h-12 w-12 rounded-full"
                   alt=""
-                  x-show="ftavatar"
+                  x-show="$store.settings.data.ftavatar"
                 />
                 <img
                   src="https://pbs.twimg.com/profile_images/1666179268265627649/esN51Gty_400x400.png"
-                  class="w-12 h-12 block rounded-full"
+                  class="block h-12 w-12 rounded-full"
                   alt=""
-                  x-show="!ftavatar"
+                  x-show="!$store.settings.data.ftavatar"
                 />
               </div>
               <div>
                 <!-- HANDLE -->
-                <span class="text-sm font-bold leading-tight relative">
-                  <span x-text="ftname" x-show="ftname"></span>
-                  <span x-show="!ftname">Alexander Abelt</span>
+                <span class="relative text-sm font-bold leading-tight">
+                  <span
+                    x-text="$store.settings.data.ftname"
+                    x-show="ftname"
+                  ></span>
+                  <span x-show="!$store.settings.data.ftname"
+                    >Alexander Abelt</span
+                  >
 
                   <svg
                     viewBox="0 0 22 22"
                     aria-label="Verified account"
                     role="img"
-                    class="w-5 h-5 text-[#1da1f2] absolute -top-1 -right-[22px]"
+                    class="absolute -right-[22px] -top-1 h-5 w-5 text-[#1da1f2]"
                     fill="currentColor"
-                    x-show="ftverified"
+                    x-show="$store.settings.data.ftverified"
                   >
                     <g>
                       <path
@@ -182,10 +195,13 @@
                     </g>
                   </svg>
                 </span>
-                <span class="text-sm text-gray-500 leading-tight flex">
+                <span class="flex text-sm leading-tight text-gray-500">
                   @
-                  <span x-text="fthandle" x-show="fthandle"></span>
-                  <span x-show="!fthandle">acabelt</span>
+                  <span
+                    x-text="$store.settings.data.fthandle"
+                    x-show="$store.settings.data.fthandle"
+                  ></span>
+                  <span x-show="!$store.settings.data.fthandle">acabelt</span>
                 </span>
               </div>
             </div>
@@ -193,24 +209,26 @@
             <!-- END TWITTER HEADER -->
             <div class="px-6 text-[15px]">
               <div
-                class="tweet prose prose leading-tight prose-a:text-blue-600 prose-img:w-full"
+                class="tweet prose prose prose-a:text-blue-600 prose-img:w-full leading-tight"
               >
-                <span x-html="fttext" class="break-words"></span>
-                <div x-show="!fttext">
-                  Fake Tweet Generator
-                  <br /><a href="https://nerd.to/fake-tweet-generator/"
-                    >https://nerd.to/fake-tweet-generator/</a
-                  >
+                <span
+                  x-html="$store.settings.data.fttext"
+                  class="break-words"
+                  x-show="$store.settings.data.fttext"
+                ></span>
+                <div x-show="!$store.settings.data.fttext">
+                  <strong>Fake Tweet Generator</strong> - Nur ein kleiner Spaß,
+                  der jetzt auch die letzten Eingaben speichert.
                 </div>
               </div>
             </div>
 
-            <div class="p-6 flex gap-12 items-center">
+            <div class="flex items-center gap-12 p-6">
               <div class="flex text-gray-500">
                 <div>
                   <svg
                     viewBox="0 0 24 24"
-                    class="w-5 h-5 block mr-1"
+                    class="mr-1 block h-5 w-5"
                     fill="currentColor"
                   >
                     <g>
@@ -220,14 +238,17 @@
                     </g>
                   </svg>
                 </div>
-                <div class="text-sm" x-text="ftreplies"></div>
+                <div
+                  class="text-sm"
+                  x-text="$store.settings.data.ftreplies"
+                ></div>
               </div>
 
               <div class="flex text-gray-500">
                 <div>
                   <svg
                     viewBox="0 0 24 24"
-                    class="w-5 h-5 block mr-1"
+                    class="mr-1 block h-5 w-5"
                     fill="currentColor"
                   >
                     <g>
@@ -237,13 +258,16 @@
                     </g>
                   </svg>
                 </div>
-                <div class="text-sm" x-text="ftretweets"></div>
+                <div
+                  class="text-sm"
+                  x-text="$store.settings.data.ftretweets"
+                ></div>
               </div>
               <div class="flex text-gray-500">
                 <div>
                   <svg
                     viewBox="0 0 24 24"
-                    class="w-5 h-5 block mr-1"
+                    class="mr-1 block h-5 w-5"
                     fill="currentColor"
                   >
                     <g>
@@ -253,14 +277,17 @@
                     </g>
                   </svg>
                 </div>
-                <div class="text-sm" x-text="ftlikes"></div>
+                <div
+                  class="text-sm"
+                  x-text="$store.settings.data.ftlikes"
+                ></div>
               </div>
 
               <div class="flex text-gray-500">
                 <div>
                   <svg
                     viewBox="0 0 24 24"
-                    class="w-5 h-5 block mr-1"
+                    class="mr-1 block h-5 w-5"
                     fill="currentColor"
                   >
                     <g>
@@ -270,14 +297,17 @@
                     </g>
                   </svg>
                 </div>
-                <div class="text-sm" x-text="ftstats"></div>
+                <div
+                  class="text-sm"
+                  x-text="$store.settings.data.ftstats"
+                ></div>
               </div>
 
               <div class="flex text-gray-500">
                 <div>
                   <svg
                     viewBox="0 0 24 24"
-                    class="w-5 h-5 block mr-1"
+                    class="mr-1 block h-5 w-5"
                     fill="currentColor"
                   >
                     <g>

@@ -1,0 +1,42 @@
+{
+  "name": "faketweet",
+  "version": "1.0.0",
+  "description": "The Tweet Screenshot Generator is a handy tool that enables users to create screenshots of tweets with customizable details. With this tool, you can add an avatar, name, handle, reply count, likes count, retweet count, and view stats to simulate a realistic tweet screenshot. Whether you need to create mock-ups for presentations, share screenshots on social media, or simply have some fun, this tool has got you covered.",
+  "main": "index.html",
+  "scripts": {
+    "build:clean": "del _site",
+    "dev:tailwind": "npx tailwindcss -i ./tailwind.css -c tailwind.config.js -o ./tailwind.dist.css --watch",
+    "build:tailwind": "npx tailwindcss -i ./tailwind.css -c tailwind.config.js -o ./tailwind.dist.css --minify",
+    "dev:js": "npx esbuild ./app.js --bundle --target=es2018 --watch --outfile=./app.dist.js",
+    "build:js": "npx esbuild ./app.js --bundle --target=es2018 --minify --outfile=./app.dist.js",
+    "dev:alpine": "npx esbuild ./alpinejs.js --bundle --target=es2018 --watch --outfile=./alpinejs.dist.js",
+    "build:alpine": "npx esbuild ./alpinejs.js --bundle --target=es2018 --minify --outfile=./alpinejs.dist.js",
+    "dev": "npm-run-all --parallel dev:*",
+    "build": "npm-run-all build:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmanufaktur/fake-tweet-generator.git"
+  },
+  "author": "webmanufaktur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webmanufaktur/fake-tweet-generator/issues"
+  },
+  "homepage": "https://github.com/webmanufaktur/fake-tweet-generator#readme",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/line-clamp": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.2",
+    "alpinejs": "^3.10.2",
+    "@alpinejs/persist": "^3.10.5",
+    "del-cli": "^4.0.1",
+    "esbuild": "^0.14.47",
+    "npm-run-all": "^4.1.5",
+    "tailwindcss": "^3.1.2",
+    "prettier": "^2.8.1",
+    "prettier-plugin-tailwindcss": "^0.2.0",
+    "terser": "^5.14.0"
+  },
+  "devDependencies": {}
+}
